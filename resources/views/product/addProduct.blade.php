@@ -4,5 +4,7 @@
 @endsection
 
 @section('content')
-  <h1>Test content</h1>
+
+  <h1>Add Product</h1>
+
 @endsection
