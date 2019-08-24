@@ -15,7 +15,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">
               <a class="dropdown-item" href="{{route('listProduct')}}">List Products</a>
-              <a class="dropdown-item" href="{{route('addProduct')}}">Add new product</a>
+              <a class="dropdown-item" href="{{route('createProduct')}}">Add new product</a>
             </div>
         </li>
         <li class="nav-item">
