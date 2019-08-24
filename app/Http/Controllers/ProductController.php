@@ -74,7 +74,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         $products = Product::findOrFail($id);
         $products->title = $request->title;
