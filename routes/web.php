@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::resources(['product'=>'ProductController']);
+
+Route::get('cart', 'CartController@index')->name('cart.index');
+Route::get('cart/{id}', 'CartController@store')->name('cart.store');
+Route::delete('cart/{id}', 'CartController@destroy')->name('cart.destroy');
