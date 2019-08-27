@@ -14,12 +14,12 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">
-              <a class="dropdown-item" href="{{route('listProduct')}}">List Products</a>
-              <a class="dropdown-item" href="{{route('createProduct')}}">Add new product</a>
+              <a class="dropdown-item" href="{{route('product.index')}}">List Products</a>
+              <a class="dropdown-item" href="{{route('product.create')}}">Add new product</a>
             </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="{{route('cart.index')}}">My cart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
