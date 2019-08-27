@@ -41,9 +41,9 @@ class CartController extends Controller
         $cart = Cart::find(Cart::getDefaultId());
         if (! $cart->products->contains($productId)) {
             $cart->products()->attach($productId);
-            return redirect()->route('listProduct')->with('success', 'Item has been added your cart.');
+            return redirect()->route('product.index')->with('success', 'The item has been added your cart.');
         } else {
-            return redirect()->route('product.index')->with('danger', 'Item is already in your cart');
+            return redirect()->route('product.index')->with('danger', 'The item is already in your cart');
         }
     }
 
@@ -87,10 +87,9 @@ class CartController extends Controller
      * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy(Cart $cart, $id)
     {
-        $cartItems = Cart::find(Cart::getDefaultId());
-        $cartItems->products()->detach($cart->id);
-        return redirect()->route('cart.index')->with('success', "$cart->title has been removed");
+        $cart=Cart::find(Cart::getDefaultId())->products()->detach($id);
+        return redirect()->route('cart.index')->with('success', "The item has been removed");
     }
 }
