@@ -41,7 +41,7 @@ class ProductController extends Controller
         $product->title=$request->title;
         $product->price=$request->price;
         $product->save();
-        return redirect()->route('listProduct');
+        return redirect()->route('product.index')->with('success', "$product->title has been created.");
     }
 
     /**
@@ -76,11 +76,11 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-        $products = Product::findOrFail($id);
-        $products->title = $request->title;
-        $products->price = $request->price;
-        $products->save();
-        return redirect()->route('listProduct');
+        $product = Product::findOrFail($id);
+        $product->title = $request->title;
+        $product->price = $request->price;
+        $product->save();
+        return redirect()->route('product.index')->with('success', "$product->title has been updated.");
     }
 
     /**
@@ -91,6 +91,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()->route('product.index')->with('success', "$product->title has been removed.");
     }
 }
