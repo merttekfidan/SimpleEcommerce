@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('title')
-  Test
+  Index
 @endsection
 
 @section('content')
-  <h1>Test content</h1>
+  <h1>Index Page</h1>
 @endsection
