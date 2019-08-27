@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/', 'ProductController@index');
 Route::resources(['product'=>'ProductController']);
 
 Route::get('cart', 'CartController@index')->name('cart.index');
